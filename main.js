@@ -1,0 +1,61 @@
+
+const nav = document.getElementById("nav");
+const content = document.getElementById("content");
+let offSetTop = window.innerHeight;
+
+const events_item = document.querySelectorAll('.event-container');
+const navLi = document.querySelectorAll('.event');
+let curIndex = -1;
+
+document.addEventListener("DOMContentLoaded", () => {
+    //When page load on middle of page (refresh)
+    hightlightNav();
+    addSticky();
+    
+});
+
+window.onscroll = function(){
+    hightlightNav();
+    addSticky();
+};
+
+window.onresize = function(){
+    offSetTop = window.innerHeight;
+    addSticky();   
+}
+
+function addSticky(){
+    if(window.pageYOffset > offSetTop){
+        nav.classList.add("sticky");
+        content.classList.add("content-sticky");
+
+    }else{
+        nav.classList.remove("sticky");
+        content.classList.remove("content-sticky");
+    }
+}
+
+function hightlightNav(){
+    let current = -1;
+    events_item.forEach((item,index)=>{
+        const itemToTop = item.getBoundingClientRect().top - offSetTop/3;
+        if(itemToTop <= 0){
+            current = index;
+        }
+    })
+    //if index changed
+    if(current !== curIndex){
+        if(current !== -1){
+            navLi[current].classList.add("highlight-li");
+            if(curIndex !== -1){
+                navLi[curIndex].classList.remove("highlight-li");
+            }
+            curIndex = current;
+        }else{
+            navLi[curIndex].classList.remove("highlight-li");
+            curIndex = current;
+        }
+    }
+}
+
+document.cookie = "AC-C=ac-c; SameSite=None; Set-Cookie: cross-site-cookie=whatever; Secure";
