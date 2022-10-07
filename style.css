@@ -40,7 +40,6 @@ html{
 }
 
 body{
-    background-color: aliceblue;
     height: 100%;
 }
 
@@ -113,23 +112,23 @@ body{
     text-align: left;
     margin-bottom: 25px;
     line-height: 1.5em;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 .header .intro-container .intro table{
-    margin-left: -30px;
+    margin-left: -1vw;
     font-weight: bold;
 }
 
 
 .header .intro-container .intro td{
-    padding: 10px 30px;
+    padding: .8em 1vw;
 }
 
 .header .intro-container .intro table tr td a,
 .header .intro-container .intro table tr td a:link
 {
-    font-size: 28px;
+    font-size: 1.5em;
     color:var(--burnished-brown);
 }
 
@@ -248,39 +247,65 @@ body{
 }
 
 .container .content .event-container{
-    width: 80%;
-    margin: 80px auto;
     border: 1px solid var(--rose-ebony);
     background-color: #f9f9f9;
-    /* padding: 50px; */
+    display: flex;
+    align-content: stretch;
+    width: 80%;
+    margin: 50px auto 0px;
+    
 }
 
-.container .content .event-container h1{
-    padding: 35px 0px 20px 0px;
+.container .content .event-container .e-text{
+    display: block;
+    -ms-flex: 2;
+    flex: 1;
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+
+.container .content .event-container .e-text h1{
+    margin: 20px 0px 20px;
     text-align: center;
-    font-size: 35px;
+    font-size: 2em;
+    color: var(--rose-ebony);
+}
+
+.container .content .event-container .e-text h2{
+    margin: -15px 0px 20px;
+    text-align: center;
+    font-size: 1.8em;
     color: var(--rose-ebony);
 }
 
 .container .content .event-container p{
-    padding: 10px 0px 20px 0px;
+    margin: 10px 20px 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.2em;
     color: var(--rose-ebony);
 }
 
 .container .content .event-container iframe{
     display: block;
-    width: 80%;
-    height: 20vh;
-    margin: 20px auto 35px;
+    flex-grow: 1;
+    width:50%;
+    /* margin: 20px; */
+}
+
+.container .content .event-container .iframe1{
+    display: block;
+    flex-grow: 1;
+    width:50%;
+    margin: 20px;
 }
 
 /* footer */
 .bottom-container {
     width: 80%;
     height: 20vh;
-    margin: auto;
+    margin: 50px auto 30px;
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;

@@ -7,21 +7,35 @@ const events_item = document.querySelectorAll('.event-container');
 const navLi = document.querySelectorAll('.event');
 let curIndex = -1;
 
+let mmedia = window.matchMedia("(max-width:1024px)");
+
 document.addEventListener("DOMContentLoaded", () => {
-    //When page load on middle of page (refresh)
-    hightlightNav();
-    addSticky();
+    if(mmedia.matches){
+
+    }else{
+        //When page load on middle of page (refresh)
+        hightlightNav();
+        addSticky();
+    }
     
 });
 
 window.onscroll = function(){
-    hightlightNav();
-    addSticky();
+    if(mmedia.matches){
+
+    }else{
+        hightlightNav();
+        addSticky();
+    }
 };
 
 window.onresize = function(){
-    offSetTop = window.innerHeight;
-    addSticky();   
+    if(mmedia.matches){
+
+    }else{
+        offSetTop = window.innerHeight;
+        addSticky();   
+    }
 }
 
 function addSticky(){
