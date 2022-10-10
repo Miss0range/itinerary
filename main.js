@@ -7,9 +7,20 @@ const events_item = document.querySelectorAll('.event-container');
 const navLi = document.querySelectorAll('.event');
 let curIndex = -1;
 
+const dropBtn = document.getElementById('dropdown-btn');
+
+//don't add sticky and highlight menu item on tablet and mobile screen. 
 let mmedia = window.matchMedia("(max-width:769px)");
 
 document.addEventListener("DOMContentLoaded", () => {
+    const loader= document.getElementById('loader-container');
+    const main = document.getElementById('main');
+    setTimeout(()=>{
+        loader.style.display = "none";
+        main.style.display = "block";
+    },3000);
+
+
     if(mmedia.matches){
 
     }else{
@@ -17,8 +28,21 @@ document.addEventListener("DOMContentLoaded", () => {
         hightlightNav();
         addSticky();
     }
-    
 });
+
+dropBtn.addEventListener("click", ()=> {
+    dropBtn.classList.toggle('dropdown-btn-active');
+    const wrap = document.getElementById('nav-wrap');
+    const rollnav = document.getElementById('roll-nav1');
+    if(wrap.clientHeight){
+        wrap.style.height = 0;
+        rollnav.style.display = "block";
+    }else{
+        const toggleNav = document.getElementById('nav-container');
+        wrap.style.height = toggleNav.clientHeight + "px";
+        rollnav.style.display = "none";
+    }
+})
 
 window.onscroll = function(){
     if(mmedia.matches){
