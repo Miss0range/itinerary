@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(()=>{
         loader.style.display = "none";
         main.style.display = "block";
-    },3000);
+    },2500);
 
 
     if(mmedia.matches){

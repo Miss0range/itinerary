@@ -534,6 +534,11 @@ body{
 /* tablet */
 @media (max-width: 768px) and (min-width: 481px){
     /* header */
+
+    .header{
+        animation: onload-bg-anima 2s 0s;
+    }
+
     .header .intro-container{
         display: flex;
         align-items: center;
@@ -542,7 +547,7 @@ body{
         top: 0px;
         width: 100vw;
         height: 100vh;
-        animation: onload-text-anima 3s 0s;
+        animation: onload-text-anima 2s 0s;
     }
 
     .header .intro-container .intro{
@@ -554,7 +559,7 @@ body{
         border: 0px solid #fff;
         border-radius: 50px;
     }
-    
+
     @-webkit-keyframes onload-bg-anima{
         0% {background-position-y: -100vh;}
         100% {background-position-y: 0;}
@@ -662,6 +667,10 @@ body{
     }
 
     /* header */
+    .header{
+        animation: onload-bg-anima 1.5s 0s;
+    }
+
     .header .intro-container{
         display: flex;
         align-items: center;
@@ -670,7 +679,7 @@ body{
         top: 0px;
         width: 100vw;
         height: 100vh;
-        animation: onload-text-anima 3s 0s;
+        animation: onload-text-anima 1.5s 0s;
     }
 
     @-webkit-keyframes onload-bg-anima{
