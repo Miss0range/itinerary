@@ -7,7 +7,7 @@ const events_item = document.querySelectorAll('.event-container');
 const navLi = document.querySelectorAll('.event');
 let curIndex = -1;
 
-let mmedia = window.matchMedia("(max-width:1024px)");
+let mmedia = window.matchMedia("(max-width:769px)");
 
 document.addEventListener("DOMContentLoaded", () => {
     if(mmedia.matches){
