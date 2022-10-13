@@ -287,19 +287,16 @@ body{
 .container{
     display: flex;
     position: relative;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 /* nav */
 .container .nav{
+    top:0px;
+    position: sticky;
     min-width:360px;
     background-color:var(--sakura);
     height: 100vh;
-}
-
-.sticky{
-    position: fixed;
-    top: 0;
 }
 
 .container .nav .nav-dropdown{
@@ -440,9 +437,6 @@ body{
     flex-grow: 1;
     /* overscroll-behavior: auto; */
     
-}
-.content-sticky{
-    margin-left: 360px;
 }
 
 /* add overflow */

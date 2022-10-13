@@ -1,6 +1,4 @@
 
-const nav = document.getElementById("nav");
-const content = document.getElementById("content");
 let offSetTop = window.innerHeight;
 
 const events_item = document.querySelectorAll('.event-container');
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }else{
         //When page load on middle of page (refresh)
         hightlightNav();
-        addSticky();
     }
 });
 
@@ -49,29 +46,8 @@ window.onscroll = function(){
 
     }else{
         hightlightNav();
-        addSticky();
     }
 };
-
-window.onresize = function(){
-    if(mmedia.matches){
-
-    }else{
-        offSetTop = window.innerHeight;
-        addSticky();   
-    }
-}
-
-function addSticky(){
-    if(window.pageYOffset > offSetTop){
-        nav.classList.add("sticky");
-        content.classList.add("content-sticky");
-
-    }else{
-        nav.classList.remove("sticky");
-        content.classList.remove("content-sticky");
-    }
-}
 
 function hightlightNav(){
     let current = -1;
